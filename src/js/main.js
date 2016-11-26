@@ -2,12 +2,7 @@
 
   // Output varialbles
 	let output = document.getElementById('main');
-	// let subOutput = document.getElementById('sub');
-	let operatorCount =0;
-	let decimalCount =0;
-	let operators = ['+', '-', 'X', '/'];
-	let mainLastElement = output.innerHTML[output.innerHTML.length -1];
-	// let subLastElement = subOutput.innerHTML[subOutput.innerHTML.length -1];
+	let isAnOperator = false;
 
   // Declare Variables for the buttons
 	const numberSeven = document.getElementById('7');
@@ -25,7 +20,7 @@
 	const divide = document.getElementById('/');
 	const plus = document.getElementById('+');
 	const minus = document.getElementById('-');
-	const multiply = document.getElementById('X');
+	const multiply = document.getElementById('*');
 	const equals = document.getElementById('equals');
 
   // Add event listeners for all buttons
@@ -34,8 +29,8 @@
 	equals.addEventListener('click', calculate);
 	plus.addEventListener('click', addition);
 	minus.addEventListener('click', subtraction);
-  // multiply.addEventListener('click', multiplication);
-  // divide.addEeventListener('click', division)
+	multiply.addEventListener('click', multiplication);
+	divide.addEventListener('click', division);
 	numberOne.addEventListener('click', appendOne);
 	numberTwo.addEventListener('click', appendTwo);
 	numberTwo.addEventListener('click', appendTwo);
@@ -50,12 +45,20 @@
 
   // Operator buttons handlers
 	function addition() {
-		buffer.push()
+		renderOperator('+');
 	}
 
 
 	function subtraction() {
+		renderOperator('-');
+	}
 
+	function division() {
+		renderOperator('/');
+	}
+
+	function multiplication() {
+		renderOperator('*');
 	}
 
   // Number event handlers
@@ -100,27 +103,24 @@
 		renderNumber('0');
 	}
 
-	function appendDecimal() {
-		if (Math.abs(operatorCount - decimalCount) < 2) {
-			decimalCount += 1;
-			output.innerHTML += '.';
+	function renderOperator(operator){
+		if(!isAnOperator && output.innerHTML.length < 7){
+			output.innerHTML += operator;
+			isAnOperator = true;
 		}
-    
 	}
 
 	function renderNumber(number) {
-		if(operators.includes(output.innerHTML)){
-			output.innerHTML = '';
-		}
-		if (output.innerHTML.length < 8 && !operators.includes()) {
-			(output.innerHTML == '0') ? output.innerHTML = number: output.innerHTML += number;
+		if(output.innerHTML.length < 7){
+			output.innerHTML+= number;
+			isAnOperator =false;
 		}
 	}
 
   // Utility Functions
 	function reset() {
 		output.innerHTML = '0';
-		subOutput.innerHTML = '';
+
 	}
 
 	function goBackOne() {
@@ -132,9 +132,8 @@
 	}
 
 	function calculate() {
-		console.log(subOutput.innerHTML + output.innerHTML);
-		output.innerHTML = eval(subOutput.innerHTML);
-		subOutput.innerHTML = '';
+		output.innerHTML = eval(output.innerHTML);
 	}
+
 
 })();

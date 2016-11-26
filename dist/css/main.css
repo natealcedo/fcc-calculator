@@ -8330,16 +8330,11 @@ h4 {
   font-size: 40px;
 }
 
-#sub {
-  padding-left: 15px;
-  padding-top: 25px;
-  font-size: 20px;
-}
-
 #output {
   border-style: solid;
-  border-color: white;
+  border-color: #8FBC8F;
   font-family: 'Bungee Inline', cursive;
+  color: #696969;
   position: center fixed;
   width: 250px;
   height: 16em;
@@ -8349,15 +8344,15 @@ h4 {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  background-color: silver;
+  background-color: white;
 }
 
 #calculator {
   position: center fixed;
   border-style: solid;
-  border-color: white;
+  border-color: #8FBC8F;
   width: 250px;
-  background-color: #5F9EA0;
+  background-color: #696969;
   margin-left: auto;
   margin-right: auto;
   margin-top: -20px;
@@ -8370,7 +8365,7 @@ h4 {
 
 hr {
   width: 250px;
-  background-color: pink;
+  background-color: #8FBC8F;
   position: center fixed;
   height: 10px;
   display: block;
@@ -8383,7 +8378,7 @@ hr {
 }
 
 #zero {
-  width: 11.3em;
+  width: 7.2em;
   margin: 6px;
   text-align: center;
 }
