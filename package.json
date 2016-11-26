@@ -1,0 +1,29 @@
+{
+  "name": "fcc-calculator",
+  "version": "1.0.0",
+  "description": "A small project from the advanced section of the free code camp course on front-end development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndaljr/fcc-calculator.git"
+  },
+  "keywords": [
+    "fcc",
+    "calculator"
+  ],
+  "author": "nathaniel alcedo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndaljr/fcc-calculator/issues"
+  },
+  "homepage": "https://github.com/ndaljr/fcc-calculator#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
