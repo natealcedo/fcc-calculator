@@ -8,7 +8,7 @@ gulp.task('default',['moveJs', 'concat-css', 'moveHTML'], function () {
 	browserSync.init({
 		server: './dist'
 	});
-	gulp.watch('./src/**/*').on('change', reload);
+	gulp.watch('./src/**/*', ['moveJs', 'concat-css', 'moveHTML', reload]);
 });
 
 gulp.task('concat-css', ()=> {
