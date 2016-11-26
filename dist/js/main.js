@@ -2,9 +2,12 @@
 
   // Output varialbles
 	let output = document.getElementById('main');
-	let subOutput = document.getElementById('sub');
+	// let subOutput = document.getElementById('sub');
+	let operatorCount =0;
+	let decimalCount =0;
 	let operators = ['+', '-', 'X', '/'];
-	let lastElement = subOutput[subOutput.length -1];
+	let mainLastElement = output.innerHTML[output.innerHTML.length -1];
+	// let subLastElement = subOutput.innerHTML[subOutput.innerHTML.length -1];
 
   // Declare Variables for the buttons
 	const numberSeven = document.getElementById('7');
@@ -24,7 +27,6 @@
 	const minus = document.getElementById('-');
 	const multiply = document.getElementById('X');
 	const equals = document.getElementById('equals');
-	const decimal = document.getElementById('decimal');
 
   // Add event listeners for all buttons
 	AC.addEventListener('click', reset);
@@ -45,26 +47,12 @@
 	numberEight.addEventListener('click', appendEight);
 	numberNine.addEventListener('click', appendNine);
 	numberZero.addEventListener('click', appendZero);
-	decimal.addEventListener('click', appendDecimal);
 
   // Operator buttons handlers
 	function addition() {
-    // if(output.innerHTML == 'x' || '+' || '-' || '/'){
-    //   console.log(output.innerHTML);
-    // }
-    //else 
-		if(subOutput.innerHTML !== '' ){
-			console.log('here');
-			subOutput.innerHTML += output.innerHTML;
-			calculate();
-			output.innerHTML = '+';
-		}
-		else if(output.innerHTML !== '0') {
-			console.log('here too');
-			subOutput.innerHTML = output.innerHTML + ' + ';
-			output.innerHTML = '+';
-		}
+		buffer.push()
 	}
+
 
 	function subtraction() {
 
@@ -113,7 +101,8 @@
 	}
 
 	function appendDecimal() {
-		if (!output.innerHTML.includes('.')) {
+		if (Math.abs(operatorCount - decimalCount) < 2) {
+			decimalCount += 1;
 			output.innerHTML += '.';
 		}
     
@@ -135,13 +124,17 @@
 	}
 
 	function goBackOne() {
-		return output.innerHTML.length > 1 ?
+
+		output.innerHTML.length > 1 ?
       output.innerHTML = output.innerHTML.slice(0, output.innerHTML.length - 1) :
-      reset();
+			output.innerHTML = '0';
+
 	}
 
 	function calculate() {
+		console.log(subOutput.innerHTML + output.innerHTML);
 		output.innerHTML = eval(subOutput.innerHTML);
+		subOutput.innerHTML = '';
 	}
 
 })();

@@ -8357,7 +8357,7 @@ h4 {
   border-style: solid;
   border-color: white;
   width: 250px;
-  background-color: pink;
+  background-color: #5F9EA0;
   margin-left: auto;
   margin-right: auto;
   margin-top: -20px;
@@ -8370,7 +8370,7 @@ h4 {
 
 hr {
   width: 250px;
-  background-color: #778899;
+  background-color: pink;
   position: center fixed;
   height: 10px;
   display: block;
@@ -8383,14 +8383,14 @@ hr {
 }
 
 #zero {
-  width: 7em;
+  width: 11.3em;
   margin: 6px;
   text-align: center;
 }
 
 #equals {
   position: absolute;
-  height: 79px;
+  height: 84px;
 }
 
 .btn {
