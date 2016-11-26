@@ -1,0 +1,99 @@
+html,
+body {
+  background-color: black;
+  color: black;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+h1 {
+  font-family: 'Bungee Inline', cursive;
+  margin-top: 100px;
+  margin-bottom: 50px; 
+  font-size: 40px;
+  color:	#B0C4DE;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  color: #C0BEDC;
+}
+
+#main{
+  padding-top: 20px;
+  padding-left: 15px;
+  font-size: 40px; 
+}
+
+#sub{
+  padding-left: 15px;
+  padding-top: 25px;
+  font-size: 20px;
+}
+
+#output {
+  border-style: solid;
+  border-color: white;
+  font-family: 'Bungee Inline', cursive;
+  position: center fixed;
+  width: 250px;
+  height: 16em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  margin-bottom: -100px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: silver;
+}
+
+#calculator {
+  position: center fixed;
+  border-style: solid;
+  border-color: white;
+  width: 250px;
+  background-color: 	#5F9EA0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+hr {
+  width: 250px;
+  background-color:#778899;
+  position: center fixed;
+  height: 10px;
+  display: block;
+}
+
+.btn {
+  margin: 6px;
+  width: 3em;
+    text-align: center;
+}
+
+#zero{
+  width: 7em;
+  margin: 6px;
+ text-align: center;
+
+}
+
+#equals{
+ position: absolute;
+  height: 79px;
+}
+
+.btn{
+  border-style: "solid";
+  border-color: "black";
+  border-width: 2px;
+}

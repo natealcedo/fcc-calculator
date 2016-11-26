@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ndaljr/fcc-calculator#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.2",
     "gulp": "^3.9.1"
   },
   "dependencies": {
