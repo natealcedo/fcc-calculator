@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Bungee Inline';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/bungee-inline-v2-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Bungee Inline'), local('BungeeInline-Regular'),
+       url('../fonts/bungee-inline-v2-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bungee-inline-v2-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/bungee-inline-v2-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bungee-inline-v2-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/bungee-inline-v2-latin-regular.svg#BungeeInline') format('svg'); /* Legacy iOS */
+}

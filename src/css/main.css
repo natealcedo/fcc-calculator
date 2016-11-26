@@ -93,7 +93,7 @@ hr {
 }
 
 .btn{
-  border-style: "solid";
+  border-style: "double";
   border-color: "black";
   border-width: 2px;
 }
