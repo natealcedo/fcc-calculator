@@ -1,10 +1,11 @@
-(function() {
+(function () {
 
-  // Output varialbles
+	// Output varialbles
 	let output = document.getElementById('main');
-	let isAnOperator = false;
+	let hasAnOperator = false;
+	let hasADecimal = false;
 
-  // Declare Variables for the buttons
+	// Declare Variables for the buttons
 	const numberSeven = document.getElementById('7');
 	const numberEight = document.getElementById('8');
 	const numberNine = document.getElementById('9');
@@ -22,8 +23,9 @@
 	const minus = document.getElementById('-');
 	const multiply = document.getElementById('*');
 	const equals = document.getElementById('equals');
+	const decimal = document.getElementById('decimal');
 
-  // Add event listeners for all buttons
+	// Add event listeners for all buttons
 	AC.addEventListener('click', reset);
 	CE.addEventListener('click', goBackOne);
 	equals.addEventListener('click', calculate);
@@ -42,8 +44,9 @@
 	numberEight.addEventListener('click', appendEight);
 	numberNine.addEventListener('click', appendNine);
 	numberZero.addEventListener('click', appendZero);
+	decimal.addEventListener('click', appendDecimal);
 
-  // Operator buttons handlers
+	// Operator buttons handlers
 	function addition() {
 		renderOperator('+');
 	}
@@ -61,7 +64,7 @@
 		renderOperator('*');
 	}
 
-  // Number event handlers
+	// Number event handlers
 
 	function appendOne() {
 		renderNumber('1');
@@ -103,36 +106,63 @@
 		renderNumber('0');
 	}
 
-	function renderOperator(operator){
-		if(!isAnOperator && output.innerHTML.length < 7){
-			output.innerHTML += operator;
-			isAnOperator = true;
+	function appendDecimal() {
+		if (!hasADecimal) {
+			output.innerHTML += '.';
+			hasADecimal = true;
+		}
+		else if (output.innerHTML[0] == '0' && !hasADecimal) {
+			output.innerHTML += '.';
+			hasADecimal = true;
 		}
 	}
 
-	function renderNumber(number) {
-		if(output.innerHTML.length < 7){
-			output.innerHTML+= number;
-			isAnOperator =false;
-		}
-	}
-
-  // Utility Functions
+	// Utility Functions
 	function reset() {
 		output.innerHTML = '0';
+		hasAnOperator = false;
+		hasADecimal = false;
 
 	}
 
 	function goBackOne() {
 
 		output.innerHTML.length > 1 ?
-      output.innerHTML = output.innerHTML.slice(0, output.innerHTML.length - 1) :
+			output.innerHTML = output.innerHTML.slice(0, output.innerHTML.length - 1) :
 			output.innerHTML = '0';
 
 	}
 
 	function calculate() {
-		output.innerHTML = eval(output.innerHTML);
+		let result = eval(output.innerHTML);
+		if (result.length > 7){
+			result = result.slice(0,7);
+		}
+		output.innerHTML = result;
+		hasAnOperator = false;
+		hasADecimal = false;
+	}
+
+	function renderOperator(operator) {
+		if (!hasAnOperator && output.innerHTML.length < 7) {
+			output.innerHTML += operator;
+			hasAnOperator = true;
+			hasADecimal = false;
+		}
+	}
+
+	function renderNumber(number) {
+		if (output.innerHTML.length < 7 && output.innerHTML[0] !== '0') {
+			output.innerHTML += number;
+
+		}
+		else if (output.innerHTML.length < 7 && output.innerHTML[output.innerHTML.length - 1] == '.') {
+			output.innerHTML += number;
+		}
+		else if (output.innerHTML.length < 7) {
+			output.innerHTML = number;
+		}
+		hasAnOperator = false;
 	}
 
 
