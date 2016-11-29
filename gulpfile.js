@@ -13,8 +13,8 @@ gulp.task('default',['moveJs', 'concat-css', 'moveHTML'], function () {
 
 gulp.task('concat-css', ()=> {
 	return gulp.src('./src/**/*.css')
-	.pipe(concatCss('./'))
-	.pipe(gulp.dest('./dist/css/main.css'));
+	.pipe(concatCss('main.css'))
+	.pipe(gulp.dest('./dist/css/'));
 });
 
 gulp.task('moveHTML', ()=>{
