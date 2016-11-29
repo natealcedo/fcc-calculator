@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Bungee Inline', Arial;
   margin-top: 100px;
   margin-bottom: 50px; 
   font-size: 40px;
@@ -21,7 +21,7 @@ h4 {
   margin-top: 15px;
   margin-bottom: 25px;
   color: #C0BEDC;
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Bungee Inline', Arial;
 }
 
 #main{
@@ -33,7 +33,7 @@ h4 {
 #output {
   border-style: solid;
   border-color: #FFC0B4;
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Bungee Inline', Arial;
   color: #696969;
   position: center fixed;
   width: 250px;
