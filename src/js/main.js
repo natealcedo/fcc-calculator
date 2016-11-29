@@ -129,15 +129,14 @@
 
 		output.innerHTML.length > 1 ?
 			output.innerHTML = output.innerHTML.slice(0, output.innerHTML.length - 1) :
-			output.innerHTML = '0';
+			reset();
+
 
 	}
 
 	function calculate() {
 		let result = eval(output.innerHTML);
-		if (result.length > 7){
-			result = result.slice(0,7);
-		}
+		result = Math.round(result * 100) / 100;
 		output.innerHTML = result;
 		hasAnOperator = false;
 		hasADecimal = false;
@@ -152,14 +151,22 @@
 	}
 
 	function renderNumber(number) {
-		if (output.innerHTML.length < 7 && output.innerHTML[0] !== '0') {
-			output.innerHTML += number;
-
-		}
-		else if (output.innerHTML.length < 7 && output.innerHTML[output.innerHTML.length - 1] == '.') {
+		if (output.innerHTML.length < 9 && output.innerHTML[0] !== '0') {
 			output.innerHTML += number;
 		}
-		else if (output.innerHTML.length < 7) {
+		else if (output.innerHTML.length < 9 && output.innerHTML[0] === '0' && output.innerHTML.length == 1) { // case doesn't allow for double 0
+			output.innerHTML = number;
+		}
+		else if (output.innerHTML.length < 9 && output.innerHTML[output.innerHTML.length - 1] == '.') {
+			output.innerHTML += number;
+		}
+		else if (output.innerHTML.length < 9 && number !== '0') {
+			output.innerHTML += number;
+		}
+		else if (output.innerHTML.length < 9 && number === '0') {
+			output.innerHTML += number;
+		}
+		else if (output.innerHTML.length < 9) {
 			output.innerHTML = number;
 		}
 		hasAnOperator = false;

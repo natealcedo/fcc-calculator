@@ -31,7 +31,7 @@
 	equals.addEventListener('click', calculate);
 	plus.addEventListener('click', addition);
 	minus.addEventListener('click', subtraction);
-	multiply.addEventListener('click', multiplication());
+	multiply.addEventListener('click', multiplication);
 	divide.addEventListener('click', division);
 	numberOne.addEventListener('click', appendOne);
 	numberTwo.addEventListener('click', appendTwo);
@@ -130,14 +130,14 @@
 		output.innerHTML.length > 1 ?
 			output.innerHTML = output.innerHTML.slice(0, output.innerHTML.length - 1) :
 			reset();
-  
+
 
 	}
 
 	function calculate() {
 		let result = eval(output.innerHTML);
-    result = Math.round(result * 100) / 100
-    output.innerHTML = result;
+		result = Math.round(result * 100) / 100;
+		output.innerHTML = result;
 		hasAnOperator = false;
 		hasADecimal = false;
 	}
@@ -151,22 +151,22 @@
 	}
 
 	function renderNumber(number) {
-		if (output.innerHTML.length < 9 && output.innerHTML[0] !== '0' ) { 
+		if (output.innerHTML.length < 9 && output.innerHTML[0] !== '0') {
 			output.innerHTML += number;
 		}
-    else if (output.innerHTML.length < 9 && output.innerHTML[0] === '0' && output.innerHTML.length == 1 ) { // case doesn't allow for double 0
+		else if (output.innerHTML.length < 9 && output.innerHTML[0] === '0' && output.innerHTML.length == 1) { // case doesn't allow for double 0
 			output.innerHTML = number;
 		}
 		else if (output.innerHTML.length < 9 && output.innerHTML[output.innerHTML.length - 1] == '.') {
 			output.innerHTML += number;
 		}
-		else if (output.innerHTML.length < 9 && number !== '0') { 
+		else if (output.innerHTML.length < 9 && number !== '0') {
 			output.innerHTML += number;
 		}
-    else if (output.innerHTML.length < 9 && number === '0') {
+		else if (output.innerHTML.length < 9 && number === '0') {
 			output.innerHTML += number;
 		}
-    else if (output.innerHTML.length < 9 ) {
+		else if (output.innerHTML.length < 9) {
 			output.innerHTML = number;
 		}
 		hasAnOperator = false;
