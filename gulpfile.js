@@ -3,6 +3,7 @@ var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat')
 
 
 gulp.task('default',['moveJs', 'concat-css', 'moveHTML'], function () {
